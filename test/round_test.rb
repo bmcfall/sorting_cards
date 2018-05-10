@@ -145,7 +145,7 @@ class RoundTest < Minitest::Test
     assert_equal 1, round.number_correct
   end
 
-  def test_the_percent_correct
+  def test_percent_correct
     card_1 = Card.new("3","Hearts")
     card_2 = Card.new("4", "Clubs")
     deck = Deck.new([card_1, card_2])
