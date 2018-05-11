@@ -1,16 +1,15 @@
 class Guess
 
   attr_reader :response,
-              :card,
-              :response
+              :card
 
   def initialize(response, card)
     @response = response
-    @card = card
+    @card     = card
   end
 
   def correct?
-    if @response == "#{@card.value} of #{@card.suit}"
+    if card.fancy_output == response
       true
     else
       false
