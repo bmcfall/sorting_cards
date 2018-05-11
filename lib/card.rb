@@ -4,7 +4,11 @@ class Card
               :suit
 
   def initialize(value, suit)
-    @value = value
-    @suit = suit
+    @value  = value
+    @suit   = suit
+  end
+
+  def fancy_output
+    "#{value} of #{suit}"
   end
 end

@@ -3,18 +3,28 @@ require 'minitest/pride'
 require './lib/card'
 
 class CardTest < Minitest::Test
+
+  def setup
+    @card = Card.new("Ace", "Spades")
+  end
+
   def test_card_exists
-    card = Card.new("Ace", "Spades")
-    assert_instance_of Card, card
+    assert_instance_of Card, @card
   end
 
-  def test_card_has_value
-    card = Card.new("Ace", "Spades")
-    assert_equal "Ace", card.value
+  def test_card_attributes
+    assert_equal "Ace", @card.value
+    assert_equal "Spades", @card.suit
   end
 
-  def test_card_has_suit
-    card = Card.new("Ace", "Spades")
-    assert_equal "Spades", card.suit
+  def test_card_has_pretty_output
+    assert_equal "Ace of Spades", @card.fancy_output
+  end
+
+  def test_a_card_has_different_values
+    card = Card.new("Queen", "Hearts")
+
+    assert_equal "Queen", card.value
+    assert_equal "Hearts", card.suit
   end
 end
